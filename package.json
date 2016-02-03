@@ -1,0 +1,28 @@
+{
+  "name": "webpack-angular-gettext",
+  "version": "0.0.1",
+  "description": "Webpack plugin that extracts text for angular-gettext.",
+  "repository": "https://github.com/timonwong/webpack-angular-gettext",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "files": [
+    "src",
+    "dist",
+    "LICENSE"
+  ],
+  "author": "Timon Wong <wangtianpeng@navercorp.com>",
+  "license": "MIT",
+  "dependencies": {
+    "loader-utils": "^0.2.12",
+    "lodash": "^4.2.0",
+    "pofile": "^1.0.2",
+    "source-map": "^0.5.3",
+    "webpack": "^1.12.9"
+  },
+  "devDependencies": {
+    "tslint": "^3.3.0",
+    "typescript": "^1.7.5"
+  }
+}
