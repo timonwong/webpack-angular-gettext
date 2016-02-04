@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import {Extractor} from 'angular-gettext-tools';
 import {GettextLoaderContext} from './context';
 
-function Loader(source: string, sourceMaps: string): void {
+function extractLoader(source: string, sourceMaps: any): void {
   const loader: GettextLoaderContext = this;
 
   if (!loader.addGettextStrings) {
@@ -15,7 +15,7 @@ function Loader(source: string, sourceMaps: string): void {
     loader.cacheable();
   }
 
-  extractTranslations(loader, source);
+  extractTranslations.call(this, loader, source, sourceMaps);
 }
 
 function findRoot(context: string, entries: string | string[]): string {
@@ -34,7 +34,7 @@ function findRoot(context: string, entries: string | string[]): string {
         const result: string[] = [];
 
         // find the minimum matching route
-        for (var i = 0; i < memo.length; i++) {
+        for (let i = 0; i < memo.length; i++) {
           if (memoTokens[i] === dirTokens[i]) {
             result.push(memoTokens[i]);
           } else {
@@ -48,7 +48,7 @@ function findRoot(context: string, entries: string | string[]): string {
   }
 }
 
-function extractTranslations(loader: GettextLoaderContext, source: string): void {
+function extractTranslations(loader: GettextLoaderContext, source: string, sourceMaps: any): void {
   const options = loaderUtils.parseQuery(this.query);
 
   const extractor = new Extractor(options);
@@ -59,6 +59,7 @@ function extractTranslations(loader: GettextLoaderContext, source: string): void
   extractor.parse(filename, source);
 
   loader.addGettextStrings(_.clone(extractor.strings));
+  loader.callback(null, source, sourceMaps);
 }
 
-export default Loader;
+export = extractLoader;

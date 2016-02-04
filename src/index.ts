@@ -1,12 +1,17 @@
 /// <reference path="../typings/tsd.d.ts" />
+import * as _ from 'lodash';
 
 export {default as Plugin} from './plugin';
 
-export function Loader(before: string, options: any): string {
-  const loader = require.resolve('./loader');
+export function loader(options: {}, before: string): string {
+  let loader = require.resolve('./loader');
   options = options ? `?${JSON.stringify(options)}` : '';
+
+  loader = `${loader}${options}`;
+
   if (before) {
-    return `${loader}!${before}${options}`;
+    loader = `${loader}!${before}`;
   }
-  return loader + options;
+
+  return loader;
 }

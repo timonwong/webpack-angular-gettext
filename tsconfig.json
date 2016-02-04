@@ -7,6 +7,10 @@
     "outDir": "dist",
     "moduleResolution": "node"
   },
+  "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.*"
+  ],
   "files": [
     "typings/tsd.d.ts",
     "src/index.ts",

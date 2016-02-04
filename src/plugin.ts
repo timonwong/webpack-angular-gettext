@@ -18,7 +18,7 @@ export class AngularGettextPlugin implements Plugin {
   private registry = new Registry();
 
   constructor (options: PluginOptions) {
-    this.options = _.extend({fileName: 'translations.json'}, options);
+    this.options = _.extend({fileName: 'translations.pot'}, options);
   }
 
   /**
@@ -47,8 +47,9 @@ export class AngularGettextPlugin implements Plugin {
   }
 
   emitResult(compilation: Compilation, callback: () => void): void {
-    const content = this.registry.toString();
-    fs.writeFile(this.options.fileName, content, () => {
+    let content = this.registry.toString();
+    content = `#, fuzzy\n${content}`;
+    fs.writeFile(this.options.fileName, content, {encoding: 'utf-8'}, (error) => {
       callback();
     });
   };

@@ -26,6 +26,7 @@ export class Registry {
     this.stringsList.push(strings);
   }
 
+  // Merge two po strings, please note that this function will modify the target instance
   private merge(target: angularGettextTools.Strings, from: angularGettextTools.Strings) {
     _.forIn(from, (contextObject, msgid) => {
       if (!target[msgid]) {
@@ -65,7 +66,7 @@ export class Registry {
 
     if (this.strings) {
       _.forIn(this.strings, (msg, msgid) => {
-        const contexts = _.keys(msg).sort;
+        const contexts = _.keys(msg).sort();
         _.forEach(contexts, (context) => {
           catalog.items.push(msg[context]);
         });
