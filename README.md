@@ -15,7 +15,7 @@ npm install --save-dev webpack-angular-gettext
 Configure the loader and the plugin in the webpack configuration.
 
 ```javascript
-var WebpackAngularGettext = require('webpack-angular-gettext);
+var WebpackAngularGettext = require('webpack-angular-gettext');
 
 module.exports = {
   // ...
