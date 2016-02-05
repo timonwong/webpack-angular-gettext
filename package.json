@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/timonwong/webpack-angular-gettext",
   "dependencies": {
+    "angular-gettext-tools": "^2.1.11",
     "loader-utils": "^0.2.12",
     "lodash": "^4.2.0",
     "pofile": "^1.0.2",
