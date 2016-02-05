@@ -1,6 +1,6 @@
 {
   "name": "webpack-angular-gettext",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Timon Wong <wangtianpeng@navercorp.com>",
   "license": "MIT",
   "description": "Webpack plugin that extracts text for angular-gettext.",
