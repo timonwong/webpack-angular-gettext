@@ -50,14 +50,13 @@ function findRoot(context: string, entries: string | string[]): string {
 
 function extractTranslations(loader: GettextLoaderContext, source: string, sourceMaps: any): void {
   const options = loaderUtils.parseQuery(this.query);
-
   const extractor = new Extractor(options);
-
   const root = findRoot(this.options.context, this.options.entry);
   const filename = path.relative(root, this.resourcePath);
 
   extractor.parse(filename, source);
 
+  loader.pruneGettextStrings(filename);
   loader.addGettextStrings(_.clone(extractor.strings));
   loader.callback(null, source, sourceMaps);
 }

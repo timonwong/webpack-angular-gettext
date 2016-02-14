@@ -36,6 +36,7 @@ export class AngularGettextPlugin implements Plugin {
        */
       compilation.plugin('normal-module-loader', (loaderContext: GettextLoaderContext) => {
         loaderContext.addGettextStrings = this.addGettextStrings.bind(this);
+        loaderContext.pruneGettextStrings = this.registry.pruneGetTextStrings.bind(this.registry);
       });
     });
 
