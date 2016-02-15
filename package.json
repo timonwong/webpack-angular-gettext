@@ -6,7 +6,11 @@
   "description": "Webpack plugin that extracts text for angular-gettext.",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "tsc"
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "npm run lint",
+
+    "prepublish": "tsc",
+    "pretest": "tsc"
   },
   "files": [
     "src",
@@ -21,10 +25,10 @@
   "dependencies": {
     "angular-gettext-tools": "^2.1.11",
     "loader-utils": "^0.2.12",
-    "lodash": "^4.2.0",
+    "lodash": "^4.3.0",
     "pofile": "^1.0.2",
     "source-map": "^0.5.3",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.13"
   },
   "devDependencies": {
     "tslint": "^3.3.0",

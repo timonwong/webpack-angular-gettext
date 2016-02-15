@@ -1,6 +1,4 @@
 /// <reference path="../typings/tsd.d.ts" />
-import * as _ from 'lodash';
-
 export {default as Plugin} from './plugin';
 
 export function loader(options: {}, before: string): string {
