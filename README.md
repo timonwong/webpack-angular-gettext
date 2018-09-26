@@ -1,5 +1,7 @@
 # webpack-angular-gettext
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/timonwong/webpack-angular-gettext.svg)](https://greenkeeper.io/)
+
 Webpack plugin & loader that extract translatable strings from your source files for [angular-gettext].
 
 Based on [webpack-angular-translate] and [angular-gettext-extract-loader].
