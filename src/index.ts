@@ -3,7 +3,7 @@ export {default as Plugin} from './plugin';
 
 export function loader(options: {}, before: string): string {
   let loader = require.resolve('./loader');
-  options = options ? `?${JSON.stringify(options)}` : '';
+  options = '?' + (options ? JSON.stringify(options) : '');
 
   loader = `${loader}${options}`;
 
