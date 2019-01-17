@@ -22,13 +22,15 @@ var WebpackAngularGettext = require('webpack-angular-gettext');
 module.exports = {
   // ...
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.html$/,
         exclude: /node_modules/,
         loader: WebpackAngularGettext.loader()
       },
       {
+        enforce: 'pre',
         test: /\.js$/,
         loader: WebpackAngularGettext.loader()
       }
